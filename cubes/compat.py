@@ -43,6 +43,7 @@ else:
     def to_str(b):
         return b
 
+    s = unicode(s.__str__(), 'utf-8')
     def to_unicode(s):
         if isinstance(s, unicode):
             return s
