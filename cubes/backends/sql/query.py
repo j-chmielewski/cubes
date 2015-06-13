@@ -766,11 +766,6 @@ class QueryBuilder(object):
         master = _StatementConfiguration()
         detail = _StatementConfiguration()
 
-        self.logger.debug("prepare aggregation statement. cell: '%s' "
-                          "drilldown: '%s' summary only: %s" %
-                          (",".join([str(cut) for cut in cell.cuts]),
-                          drilldown, summary_only))
-
         # Analyse and Prepare
         # -------------------
         # Get the cell attributes and find whether we have some outer details
