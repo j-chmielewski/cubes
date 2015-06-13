@@ -43,11 +43,15 @@ else:
     def to_str(b):
         return b
 
-    s = unicode(s.__str__(), 'utf-8')
     def to_unicode(s):
         if isinstance(s, unicode):
             return s
 
+        try:
+            s = str(s)
+        except:
+            return unicode(s.__str__(), 'utf-8')
+            
         for enc in ('utf8', 'latin-1'):
             try:
                 return unicode(s, enc)
