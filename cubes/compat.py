@@ -46,7 +46,7 @@ else:
     def to_unicode(s):
         if isinstance(s, unicode):
             return s
-        s = str(s)
+
         for enc in ('utf8', 'latin-1'):
             try:
                 return unicode(s, enc)
