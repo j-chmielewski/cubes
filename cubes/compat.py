@@ -47,11 +47,14 @@ else:
         if isinstance(s, unicode):
             return s
 
+        if isinstance(s.__str__(), unicode):
+            return s.__str__()
+
         try:
             s = str(s)
         except:
             return unicode(s.__str__(), 'utf-8')
-            
+
         for enc in ('utf8', 'latin-1'):
             try:
                 return unicode(s, enc)
